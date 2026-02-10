@@ -4,7 +4,7 @@ $muted: rgba(255, 255, 255, 0.65);
 $line: rgba(255, 255, 255, 0.12);
 $accent: #3b82f6;
 
-$pageMax: 1180px;
+$pageMax: 1500px;
 
 .container {
   width: min($pageMax, calc(100% - 32px));

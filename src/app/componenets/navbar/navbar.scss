@@ -1,7 +1,7 @@
 $text: rgba(255, 255, 255, 0.92);
 $muted: rgba(255, 255, 255, 0.65);
 $accent: #3b82f6;
-$pageMax: 1180px;
+$pageMax: 1500px;
 
 *,
 *::before,
@@ -12,6 +12,9 @@ $pageMax: 1180px;
 .container {
   width: min($pageMax, calc(100% - 32px));
   margin: 0 auto;
+  padding: 40px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 .header {
@@ -26,8 +29,10 @@ $pageMax: 1180px;
     height: 72px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     gap: 14px;
+
+    /* ✅ allow nav to take middle space */
+    width: 100%;
   }
 }
 
@@ -37,6 +42,10 @@ $pageMax: 1180px;
   gap: 10px;
   text-decoration: none;
   color: $text;
+
+  /* ✅ prevent brand from stretching */
+  flex: 0 0 auto;
+  white-space: nowrap;
 
   &__mark {
     width: 40px;
@@ -57,15 +66,25 @@ $pageMax: 1180px;
   }
 }
 
+/* ✅ CENTER NAV like your second screenshot */
 .nav {
+  flex: 1;
   display: flex;
-  gap: 18px;
+  justify-content: center;
+  gap: 26px;
+
+  /* Optional: uncomment if you feel it’s slightly pulled right because CTA is wide */
+  /* transform: translateX(-18px); */
 
   &__link {
+    position: relative;
+
     color: $muted;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
+    font-weight: 700;
+    font-size: 15px; /* ✅ bigger */
+    padding: 10px 2px; /* ✅ more presence */
+    letter-spacing: 0.2px;
 
     &:hover {
       color: $text;
@@ -74,6 +93,22 @@ $pageMax: 1180px;
     &.is-active {
       color: $text;
     }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: $accent;
+      transition: width 240ms ease;
+    }
+
+    &:hover::after,
+    &.is-active::after {
+      width: 100%;
+    }
   }
 }
 
@@ -81,6 +116,9 @@ $pageMax: 1180px;
   display: flex;
   align-items: center;
   gap: 10px;
+
+  /* ✅ keep CTA from affecting the center space */
+  flex: 0 0 auto;
 }
 
 .pill {
@@ -137,13 +175,12 @@ $pageMax: 1180px;
   }
 }
 
-/* Apple-like overlay */
 /* Overlay */
 .overlay {
   position: fixed;
   inset: 0;
-  z-index: 999; /* ✅ above page content */
-  background: rgba(0, 0, 0, 0.35); /* ✅ must be semi-transparent */
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -153,8 +190,8 @@ $pageMax: 1180px;
   position: fixed;
   left: 16px;
   right: 16px;
-  top: 88px; /* below navbar */
-  z-index: 1000; /* ✅ above overlay */
+  top: 88px;
+  z-index: 1000;
   border-radius: 18px;
 
   background: rgba(7, 10, 18, 0.94);
@@ -220,7 +257,7 @@ $pageMax: 1180px;
   &--primary {
     background: rgba(59, 130, 246, 0.95);
     border-color: rgba(59, 130, 246, 0.95);
-    color: #061023;
+    color: white;
   }
 
   &--secondary {
@@ -240,23 +277,4 @@ $pageMax: 1180px;
   .burger {
     display: inline-block;
   }
-}
-.nav__link {
-  position: relative;
-}
-
-.nav__link::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 2px;
-  background: #3b82f6;
-  transition: width 240ms ease;
-}
-
-.nav__link:hover::after,
-.nav__link.is-active::after {
-  width: 100%;
 }
