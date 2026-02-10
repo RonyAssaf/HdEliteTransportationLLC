@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { Navbar } from '../../componenets/navbar/navbar';
 
 @Component({
   selector: 'app-contact',
-  imports: [RouterLink, Navbar],
+  imports: [Navbar],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })

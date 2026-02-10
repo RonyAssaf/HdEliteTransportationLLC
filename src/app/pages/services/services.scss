@@ -328,3 +328,312 @@ $pageMax: 1180px;
     grid-template-columns: 1fr;
   }
 }
+.service-card {
+  transition:
+    transform 260ms ease,
+    box-shadow 260ms ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45);
+}
+/* ========= Alive: Service Cards ========= */
+.services-grid .service-card {
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  transition:
+    transform 280ms ease,
+    box-shadow 280ms ease,
+    border-color 280ms ease;
+}
+
+.services-grid .service-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 18px;
+  background:
+    radial-gradient(600px 200px at 30% 0%, rgba(59, 130, 246, 0.2), transparent 55%),
+    radial-gradient(500px 220px at 80% 20%, rgba(139, 92, 246, 0.16), transparent 60%);
+  opacity: 0;
+  transition: opacity 260ms ease;
+  pointer-events: none;
+}
+
+.services-grid .service-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: translateX(-140%);
+  transition: transform 650ms ease;
+  pointer-events: none;
+}
+
+.services-grid .service-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.48);
+  border-color: rgba(59, 130, 246, 0.35);
+}
+
+.services-grid .service-card:hover::before {
+  opacity: 1;
+}
+
+.services-grid .service-card:hover::after {
+  transform: translateX(140%);
+}
+
+.services-grid .service-card__tag {
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.services-grid .service-card:hover .service-card__tag {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+}
+/* ========= Alive: How we work ========= */
+.flow__item {
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  transition:
+    transform 260ms ease,
+    box-shadow 260ms ease,
+    border-color 260ms ease;
+}
+
+/* soft moving glow */
+.flow__item::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 18px;
+  background:
+    radial-gradient(700px 240px at 20% 0%, rgba(59, 130, 246, 0.18), transparent 60%),
+    radial-gradient(600px 240px at 85% 30%, rgba(139, 92, 246, 0.14), transparent 62%);
+  opacity: 0;
+  transition: opacity 260ms ease;
+  pointer-events: none;
+}
+
+/* subtle shine pass */
+.flow__item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+  transform: translateX(-150%);
+  pointer-events: none;
+}
+
+/* hover effect */
+.flow__item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.48);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.flow__item:hover::before {
+  opacity: 1;
+}
+
+.flow__item:hover::after {
+  transform: translateX(150%);
+  transition: transform 700ms ease;
+}
+
+/* make the number feel alive */
+.flow__num {
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  animation: pulseFloat 4.8s ease-in-out infinite;
+}
+
+.flow__item:nth-child(2) .flow__num {
+  animation-delay: 0.8s;
+}
+.flow__item:nth-child(3) .flow__num {
+  animation-delay: 1.6s;
+}
+
+@keyframes pulseFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+/* ========= Alive: CTA boxes ========= */
+.cta__box {
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  transition:
+    transform 260ms ease,
+    box-shadow 260ms ease,
+    border-color 260ms ease;
+}
+
+/* animated gradient aura */
+.cta__box::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 18px;
+  background:
+    radial-gradient(700px 260px at 30% 0%, rgba(59, 130, 246, 0.22), transparent 60%),
+    radial-gradient(700px 260px at 90% 40%, rgba(139, 92, 246, 0.18), transparent 62%);
+  opacity: 0.75;
+  filter: blur(0px);
+  animation: ctaGlow 10s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes ctaGlow {
+  from {
+    transform: translateY(0);
+    opacity: 0.55;
+  }
+  to {
+    transform: translateY(-18px);
+    opacity: 0.95;
+  }
+}
+
+/* shine pass on hover */
+.cta__box::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: translateX(-140%);
+  transition: transform 650ms ease;
+  pointer-events: none;
+}
+
+.cta__box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.52);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.cta__box:hover::after {
+  transform: translateX(140%);
+}
+/* ========= Alive: section depth ========= */
+.section {
+  position: relative;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  opacity: 0.6;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* ========= Page-load entrance (fade + rise) ========= */
+/* Works without JS. Triggers on first render. */
+
+@keyframes fadeRise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* default: animate once */
+.services-grid .service-card,
+.flow .flow__item,
+.cta .cta__box,
+.hero__content,
+.hero__card {
+  opacity: 0;
+  animation: fadeRise 700ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  will-change: transform, opacity;
+}
+
+/* Stagger: hero first */
+.hero__content {
+  animation-delay: 80ms;
+}
+.hero__card {
+  animation-delay: 160ms;
+}
+
+/* Stagger: service cards */
+.services-grid .service-card:nth-child(1) {
+  animation-delay: 220ms;
+}
+.services-grid .service-card:nth-child(2) {
+  animation-delay: 300ms;
+}
+.services-grid .service-card:nth-child(3) {
+  animation-delay: 380ms;
+}
+.services-grid .service-card:nth-child(4) {
+  animation-delay: 460ms;
+}
+.services-grid .service-card:nth-child(5) {
+  animation-delay: 540ms;
+}
+.services-grid .service-card:nth-child(6) {
+  animation-delay: 620ms;
+}
+
+/* Stagger: flow items */
+.flow .flow__item:nth-child(1) {
+  animation-delay: 260ms;
+}
+.flow .flow__item:nth-child(2) {
+  animation-delay: 340ms;
+}
+.flow .flow__item:nth-child(3) {
+  animation-delay: 420ms;
+}
+
+/* Stagger: CTA boxes */
+.cta .cta__box:nth-child(1) {
+  animation-delay: 320ms;
+}
+.cta .cta__box:nth-child(2) {
+  animation-delay: 400ms;
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .services-grid .service-card,
+  .flow .flow__item,
+  .cta .cta__box,
+  .hero__content,
+  .hero__card {
+    opacity: 1;
+    animation: none !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
