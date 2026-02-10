@@ -1,0 +1,164 @@
+<div class="page">
+  <app-navbar></app-navbar>
+
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <h1>Contact Us</h1>
+        <p>
+          Whether you’re a driver looking for a truck or a shipper needing capacity — send us a
+          message and we’ll get back fast.
+        </p>
+
+        <div class="hero__badges">
+          <div class="badge">Fast Response</div>
+          <div class="badge">Clear Communication</div>
+          <div class="badge">Reliable Support</div>
+        </div>
+      </div>
+
+      <div class="hero__card">
+        <h3>Call Now</h3>
+        <p class="muted">Prefer to talk? We’re one call away.</p>
+
+        <a class="btn btn--primary full" [href]="phoneHref"> Call {{ phoneDisplay }} </a>
+
+        <div class="small-note">
+          <span class="dot"></span>
+          <span>Available to support both drivers & shippers</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-grid">
+      <!-- FORM -->
+      <div class="panel">
+        <h2>Send a message</h2>
+        <p class="muted">Fill this form and we’ll reach out as soon as possible.</p>
+
+        <form class="form" (submit)="onSubmit($event)">
+          <div class="row">
+            <div class="field">
+              <label>Full Name</label>
+              <input type="text" name="name" placeholder="Your full name" required />
+            </div>
+
+            <div class="field">
+              <label>Phone</label>
+              <input type="tel" name="phone" placeholder="Your phone number" required />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label>Email (optional)</label>
+              <input type="email" name="email" placeholder="you@email.com" />
+            </div>
+
+            <div class="field">
+              <label>I’m contacting as</label>
+              <select name="type" required>
+                <option value="" selected disabled>Select one</option>
+                <option value="driver">Driver</option>
+                <option value="shipper">Shipper / Client</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label>Preferred contact method</label>
+              <select name="preferredContact" required>
+                <option value="" selected disabled>Select one</option>
+                <option value="call">Phone Call</option>
+                <option value="text">Text Message</option>
+                <option value="email">Email</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>Best time to reach you (optional)</label>
+              <input type="text" name="bestTime" placeholder="Morning / Afternoon / Anytime" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Message</label>
+            <textarea
+              name="message"
+              rows="6"
+              placeholder="Tell us what you need… (driver details / load details)"
+              required
+            ></textarea>
+          </div>
+
+          <button class="btn btn--secondary full" type="submit">Send Message</button>
+
+          <p class="form-hint">
+            By submitting, you agree to be contacted by HD Elite Transportation LLC.
+          </p>
+        </form>
+      </div>
+
+      <!-- INFO -->
+      <div class="panel panel--alt">
+        <h2>Contact information</h2>
+        <p class="muted">Use any of the options below.</p>
+
+        <div class="info">
+          <div class="info__item">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3.1 5.2 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.7c.1.8.3 1.6.6 2.4a2 2 0 0 1-.5 2.1L9.1 10.9a16 16 0 0 0 4 4l1.7-1.1a2 2 0 0 1 2.1-.5c.8.3 1.6.5 2.4.6A2 2 0 0 1 22 16.9Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+            <div>
+              <div class="info__label">Phone</div>
+              <a class="info__value" [href]="phoneHref">{{ phoneDisplay }}</a>
+            </div>
+          </div>
+
+          <div class="info__item">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M12 21s7-4.4 7-11a7 7 0 1 0-14 0c0 6.6 7 11 7 11Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path
+                  d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+            <div>
+              <div class="info__label">Location</div>
+              <div class="info__value">United States (Location TBD)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="mini-cards">
+          <div class="mini">
+            <h3>Drivers</h3>
+            <p>Apply and we’ll match you to a truck opportunity.</p>
+          </div>
+          <div class="mini">
+            <h3>Shippers</h3>
+            <p>Request a truck for your load and we’ll confirm fast.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

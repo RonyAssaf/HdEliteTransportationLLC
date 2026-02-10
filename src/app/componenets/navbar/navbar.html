@@ -1,0 +1,65 @@
+<header class="header">
+  <div class="container header__inner">
+    <a class="brand" routerLink="/" (click)="closeMenu()">
+      <span class="brand__mark">HD</span>
+      <span class="brand__text">Elite Transportation</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary navigation">
+      <a
+        routerLink="/"
+        routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="nav__link"
+        >Home</a
+      >
+      <a routerLink="/services" routerLinkActive="is-active" class="nav__link">Services</a>
+      <a routerLink="/about" routerLinkActive="is-active" class="nav__link">About Us</a>
+      <a routerLink="/contact" routerLinkActive="is-active" class="nav__link">Contact Us</a>
+    </nav>
+
+    <div class="header__cta">
+      <a class="pill pill--ghost" [href]="phoneHref">
+        <span class="pill__label">Call</span>
+        <span class="pill__value">{{ phoneDisplay }}</span>
+      </a>
+      <a class="pill pill--primary" routerLink="/contact">Request a Truck</a>
+      <a class="pill pill--primary" routerLink="/contact">Apply as Driver</a>
+    </div>
+
+    <button
+      class="burger"
+      type="button"
+      aria-label="Open menu"
+      [attr.aria-expanded]="isMenuOpen"
+      (click)="toggleMenu()"
+    >
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ✅ Overlay covers the whole screen. Click closes. -->
+<div class="overlay" *ngIf="isMenuOpen" (click)="closeMenu()"></div>
+
+<!-- ✅ Menu floats above overlay -->
+<div class="mobile" [class.mobile--open]="isMenuOpen">
+  <nav class="mobile__nav" aria-label="Mobile navigation">
+    <a
+      routerLink="/"
+      (click)="closeMenu()"
+      routerLinkActive="is-active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Home</a
+    >
+    <a routerLink="/services" (click)="closeMenu()" routerLinkActive="is-active">Services</a>
+    <a routerLink="/about" (click)="closeMenu()" routerLinkActive="is-active">About Us</a>
+    <a routerLink="/contact" (click)="closeMenu()" routerLinkActive="is-active">Contact Us</a>
+  </nav>
+
+  <div class="mobile__cta">
+    <a class="btn btn--primary" [href]="phoneHref" (click)="closeMenu()">Call {{ phoneDisplay }}</a>
+    <a class="btn btn--secondary" routerLink="/contact" (click)="closeMenu()">Request a Truck</a>
+    <a class="btn btn--secondary" routerLink="/contact" (click)="closeMenu()">Apply as Driver</a>
+  </div>
+</div>

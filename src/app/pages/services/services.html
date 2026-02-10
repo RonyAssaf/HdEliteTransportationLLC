@@ -1,0 +1,121 @@
+<div class="page">
+  <app-navbar></app-navbar>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <h1>Services built to keep freight moving</h1>
+        <p>
+          HD Elite Transportation LLC supports drivers and shippers with consistent coordination,
+          strong communication, and the tools needed to run smoothly.
+        </p>
+
+        <div class="hero__buttons">
+          <a class="btn btn--primary" routerLink="/contact">Request a Truck</a>
+          <a class="btn btn--secondary" routerLink="/contact">Apply as a Driver</a>
+        </div>
+
+        <div class="hero__badges">
+          <div class="badge">Fast Response</div>
+          <div class="badge">Reliable Support</div>
+          <div class="badge">Clear Process</div>
+        </div>
+      </div>
+
+      <div class="hero__card">
+        <h3>Need help now?</h3>
+        <p class="muted">Call anytime — we’re available 24/7.</p>
+
+        <a class="btn btn--primary full" [href]="phoneHref"> Call 346 971-4616 </a>
+
+        <div class="note">
+          <span class="dot"></span>
+          <span>Drivers & shippers support</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES GRID -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <h2>What we offer</h2>
+        <p class="muted">
+          Practical services designed to reduce friction and help you operate with confidence.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card" *ngFor="let s of services">
+          <div class="service-card__top">
+            <span class="service-card__tag">{{ s.tag }}</span>
+          </div>
+
+          <h3 class="service-card__title">{{ s.title }}</h3>
+          <p class="service-card__text">{{ s.desc }}</p>
+
+          <a class="service-card__link" routerLink="/contact">Get started →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE HELP -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <h2>How we work</h2>
+        <p class="muted">A simple flow that keeps things clear on both sides.</p>
+      </div>
+
+      <div class="flow">
+        <div class="flow__item">
+          <div class="flow__num">1</div>
+          <div class="flow__body">
+            <h3>Tell us what you need</h3>
+            <p>Driver or shipper — send the details and your timeline.</p>
+          </div>
+        </div>
+
+        <div class="flow__item">
+          <div class="flow__num">2</div>
+          <div class="flow__body">
+            <h3>We match the right option</h3>
+            <p>We coordinate the best fit based on equipment, lane, and timing.</p>
+          </div>
+        </div>
+
+        <div class="flow__item">
+          <div class="flow__num">3</div>
+          <div class="flow__body">
+            <h3>Confirm & move</h3>
+            <p>Clear communication, smooth coordination, and quick confirmations.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="center">
+        <a class="btn btn--secondary" routerLink="/contact">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container cta__inner">
+      <div class="cta__box">
+        <h3>Drivers</h3>
+        <p>Get support, better opportunities, and consistent coordination.</p>
+        <a class="btn btn--primary" routerLink="/contact">Apply Now</a>
+      </div>
+
+      <div class="cta__box">
+        <h3>Shippers</h3>
+        <p>Need capacity? Request a truck and we’ll respond fast.</p>
+        <a class="btn btn--secondary" routerLink="/contact">Request a Truck</a>
+      </div>
+    </div>
+  </section>
+</div>

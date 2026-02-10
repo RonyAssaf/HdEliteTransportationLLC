@@ -1,0 +1,145 @@
+<div class="page">
+  <app-navbar></app-navbar>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <h1>About HD Elite Transportation LLC</h1>
+        <p>
+          We are a transportation company built on long-term relationships, dependable service, and
+          a strong team culture. Serving a wide range of clients — from contractors and
+          manufacturers to businesses and local organizations — we focus on consistency,
+          reliability, and professional execution. Our growth is driven by customer trust,
+          experienced drivers, and a dedicated office team working together to keep operations
+          running smoothly. We take pride in our equipment, our people, and the standards that guide
+          everything we do.
+        </p>
+
+        <div class="hero__badges">
+          <div class="badge">Truck Solutions</div>
+          <div class="badge">24/7 Support</div>
+        </div>
+
+        <div class="hero__buttons">
+          <a class="btn btn--primary" routerLink="/contact">Work With Us</a>
+          <a class="btn btn--secondary" [href]="phoneHref">Call {{ phoneDisplay }}</a>
+        </div>
+      </div>
+
+      <div class="hero__card">
+        <h3>Our mission</h3>
+        <p class="muted">
+          To connect the right people to the right equipment — with speed, clarity, and
+          professionalism — so every load moves with confidence.
+        </p>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="stat__num">24/7</div>
+            <div class="stat__label">Support</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">Fast</div>
+            <div class="stat__label">Response</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">Clear</div>
+            <div class="stat__label">Coordination</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY / VALUES -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <h2>What we stand for</h2>
+        <p class="muted">
+          Simple values that make operations smoother for both drivers and shippers.
+        </p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="icon">
+            <span class="dot"></span>
+          </div>
+          <h3>Consistency</h3>
+          <p>Reliable support and coordination — the kind you can count on every day.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">
+            <span class="dot"></span>
+          </div>
+          <h3>Communication</h3>
+          <p>Clear updates, clear expectations, and quick answers when you need them.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">
+            <span class="dot"></span>
+          </div>
+          <h3>Professionalism</h3>
+          <p>We treat time seriously — and we handle details with care and respect.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <h2>Why choose HD Elite</h2>
+        <p class="muted">
+          Because the small things matter — and we handle them so you can focus on the big picture.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="panel">
+          <h3>For Drivers</h3>
+          <ul class="list">
+            <li><span class="check"></span> Help finding the right truck opportunity</li>
+            <li><span class="check"></span> Support with coordination and communication</li>
+            <li><span class="check"></span> Focus on strong-paying loads and smooth workflow</li>
+            <li><span class="check"></span> Guidance with permits when needed</li>
+          </ul>
+          <a class="link" routerLink="/contact">Apply as a Driver →</a>
+        </div>
+
+        <div class="panel">
+          <h3>For Shippers</h3>
+          <ul class="list">
+            <li><span class="check"></span> Access to dependable capacity</li>
+            <li><span class="check"></span> Fast response and clear confirmations</li>
+            <li><span class="check"></span> Reliable coordination from pickup to delivery</li>
+            <li><span class="check"></span> Support that stays available 24/7</li>
+          </ul>
+          <a class="link" routerLink="/contact">Request a Truck →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container cta__inner">
+      <div class="cta__box">
+        <h3>Let’s work together</h3>
+        <p>Send your details and we’ll respond quickly.</p>
+        <a class="btn btn--primary" routerLink="/contact">Contact Us</a>
+      </div>
+
+      <div class="cta__box">
+        <h3>Need help right now?</h3>
+        <p>Call us anytime — we’re available.</p>
+        <a class="btn btn--secondary" [href]="phoneHref">Call {{ phoneDisplay }}</a>
+      </div>
+    </div>
+  </section>
+</div>
