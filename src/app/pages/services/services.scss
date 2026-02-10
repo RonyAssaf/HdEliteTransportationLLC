@@ -459,39 +459,6 @@ $pageMax: 1180px;
   position: relative;
 }
 
-.section::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  opacity: 0.6;
-}
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
-  }
-}
-/* ========= Page-load entrance (fade + rise) ========= */
-/* Works without JS. Triggers on first render. */
-
-@keyframes fadeRise {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-    filter: blur(2px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-  }
-}
-
 /* default: animate once */
 .services-grid .service-card,
 .flow .flow__item,
@@ -509,43 +476,4 @@ $pageMax: 1180px;
 }
 .hero__card {
   animation-delay: 160ms;
-}
-
-/* Stagger: service cards */
-.services-grid .service-card:nth-child(1) {
-  animation-delay: 220ms;
-}
-.services-grid .service-card:nth-child(2) {
-  animation-delay: 300ms;
-}
-.services-grid .service-card:nth-child(3) {
-  animation-delay: 380ms;
-}
-.services-grid .service-card:nth-child(4) {
-  animation-delay: 460ms;
-}
-.services-grid .service-card:nth-child(5) {
-  animation-delay: 540ms;
-}
-.services-grid .service-card:nth-child(6) {
-  animation-delay: 620ms;
-}
-
-/* Stagger: flow items */
-.flow .flow__item:nth-child(1) {
-  animation-delay: 260ms;
-}
-.flow .flow__item:nth-child(2) {
-  animation-delay: 340ms;
-}
-.flow .flow__item:nth-child(3) {
-  animation-delay: 420ms;
-}
-
-/* Stagger: CTA boxes */
-.cta .cta__box:nth-child(1) {
-  animation-delay: 320ms;
-}
-.cta .cta__box:nth-child(2) {
-  animation-delay: 400ms;
 }
