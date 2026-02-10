@@ -12,10 +12,7 @@ $pageMax: 1500px;
 
 .page {
   min-height: 100vh;
-  background:
-    radial-gradient(1200px 600px at 20% -10%, rgba(59, 130, 246, 0.18), transparent 55%),
-    radial-gradient(1000px 500px at 80% 0%, rgba(139, 92, 246, 0.16), transparent 60%),
-    linear-gradient(180deg, $bg 0%, #060812 100%);
+
   color: $text;
   font-family:
     system-ui,
@@ -304,23 +301,5 @@ $pageMax: 1500px;
 
   .services-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .flow {
-    grid-template-columns: 1fr;
-  }
-
-  .cta__inner {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 560px) {
-  .hero {
-    padding-top: 36px;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
   }
 }
