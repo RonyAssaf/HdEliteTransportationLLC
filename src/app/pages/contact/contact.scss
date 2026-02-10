@@ -4,7 +4,6 @@ $muted: rgba(255, 255, 255, 0.65);
 $accent: #3b82f6;
 $pageMax: 1180px;
 
-// ✅ Prevent inputs from overflowing due to padding/borders
 *,
 *::before,
 *::after {
@@ -12,6 +11,7 @@ $pageMax: 1180px;
 }
 
 .page {
+  padding: 50px;
   min-height: 100vh;
   background:
     radial-gradient(1200px 600px at 20% -10%, rgba(59, 130, 246, 0.18), transparent 55%),
@@ -25,11 +25,6 @@ $pageMax: 1180px;
     Roboto,
     Arial,
     sans-serif;
-}
-
-.container {
-  width: min($pageMax, calc(100% - 32px));
-  margin: 0 auto;
 }
 
 .muted {
@@ -409,104 +404,4 @@ $pageMax: 1180px;
 .field select:focus,
 .field textarea:focus {
   transform: translateY(-1px);
-}
-/* =========================================
-   Contact page: Services-like hover (glow + shine)
-   Applies to: .panel, .mini, .info__item
-========================================= */
-
-/* 1) Panels (form + info panel) */
-.contact-grid .panel {
-  position: relative;
-  overflow: hidden;
-  transform: translateZ(0);
-}
-
-.contact-grid .panel::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: 18px;
-  background:
-    radial-gradient(650px 240px at 20% 0%, rgba(59, 130, 246, 0.18), transparent 60%),
-    radial-gradient(650px 260px at 90% 35%, rgba(139, 92, 246, 0.14), transparent 62%);
-  opacity: 0;
-  transition: opacity 260ms ease;
-  pointer-events: none;
-}
-
-.contact-grid .panel::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  transform: translateX(-150%);
-  transition: transform 700ms ease;
-  pointer-events: none;
-}
-
-.contact-grid .panel:hover::before {
-  opacity: 1;
-}
-
-.contact-grid .panel:hover::after {
-  transform: translateX(150%);
-}
-
-/* 2) Mini cards (the small cards section) */
-.mini-cards .mini {
-  position: relative;
-  overflow: hidden;
-  transform: translateZ(0);
-}
-
-.mini-cards .mini::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: 16px;
-  background:
-    radial-gradient(520px 200px at 30% 0%, rgba(59, 130, 246, 0.18), transparent 58%),
-    radial-gradient(520px 220px at 85% 20%, rgba(139, 92, 246, 0.14), transparent 62%);
-  opacity: 0;
-  transition: opacity 260ms ease;
-  pointer-events: none;
-}
-
-.mini-cards .mini::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.08), transparent);
-  transform: translateX(-140%);
-  transition: transform 650ms ease;
-  pointer-events: none;
-}
-
-.mini-cards .mini:hover::before {
-  opacity: 1;
-}
-
-.mini-cards .mini:hover::after {
-  transform: translateX(140%);
-}
-
-/* 3) Info rows (subtle, not too flashy) */
-.info__item {
-  border-radius: 16px;
-  padding: 10px 10px;
-  transition:
-    background 220ms ease,
-    border-color 220ms ease;
-  border: 1px solid transparent;
-}
-
-.info__item:hover {
-  background: rgba(255, 255, 255, 0.03);
-  border-color: rgba(59, 130, 246, 0.18);
-}
-
-/* 4) Optional: make submit button area feel crisp */
-.form .btn.full {
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
 }

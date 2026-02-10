@@ -180,3 +180,108 @@ app-root {
   display: block;
   min-height: 100%;
 }
+/* ===== Global reusable “alive” effects ===== */
+
+/* Entrance animation keyframe (keep only here) */
+@keyframes fadeRise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* Section separator utility (global) */
+.section {
+  position: relative;
+}
+.section::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  opacity: 0.55;
+}
+
+/* Services-like “glow + sweep” hover utility for shared classes */
+.card,
+.panel,
+.cta__box,
+.mini,
+.service-card,
+.fleet-card {
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+/* glow */
+.card::before,
+.panel::before,
+.cta__box::before,
+.mini::before,
+.service-card::before,
+.fleet-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background:
+    radial-gradient(600px 200px at 30% 0%, rgba(59, 130, 246, 0.18), transparent 55%),
+    radial-gradient(500px 220px at 80% 20%, rgba(139, 92, 246, 0.14), transparent 60%);
+  opacity: 0;
+  transition: opacity 260ms ease;
+  pointer-events: none;
+}
+
+/* sweep */
+.card::after,
+.panel::after,
+.cta__box::after,
+.mini::after,
+.service-card::after,
+.fleet-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: translateX(-140%);
+  transition: transform 650ms ease;
+  pointer-events: none;
+}
+
+.card:hover::before,
+.panel:hover::before,
+.cta__box:hover::before,
+.mini:hover::before,
+.service-card:hover::before,
+.fleet-card:hover::before {
+  opacity: 1;
+}
+
+.card:hover::after,
+.panel:hover::after,
+.cta__box:hover::after,
+.mini:hover::after,
+.service-card:hover::after,
+.fleet-card:hover::after {
+  transform: translateX(140%);
+}
+
+/* Respect reduced motion (keep only here) */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+    filter: none !important;
+  }
+}
