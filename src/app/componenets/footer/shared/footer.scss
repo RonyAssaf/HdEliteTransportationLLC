@@ -9,6 +9,13 @@ $pageMax: 1180px;
 .container {
   width: min($pageMax, calc(100% - 32px));
   margin: 0 auto;
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    sans-serif;
 }
 
 .footer {
