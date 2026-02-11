@@ -140,13 +140,14 @@ body {
   border-radius: 999px;
   padding: 10px 14px;
   text-decoration: none;
-  font-weight: 800;
+  font-weight: 500;
   font-size: 13px;
   border: 1px solid rgba(255, 255, 255, 0.12);
 
   &__label {
     opacity: 0.8;
-    font-weight: 900;
+    font-weight: 700;
+    color: white;
   }
 
   &__value {
@@ -161,7 +162,7 @@ body {
   &--primary {
     background: rgba(59, 130, 246, 0.9);
     border-color: rgba(59, 130, 246, 0.9);
-    color: #081124;
+    color: white;
   }
 }
 
@@ -232,8 +233,9 @@ body {
     a {
       text-decoration: none;
       color: rgba(255, 255, 255, 0.88);
-      font-weight: 900;
+      font-weight: 600;
       padding: 12px 12px;
+      color: white;
       border-radius: 14px;
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
@@ -257,11 +259,12 @@ body {
   padding: 12px 14px;
   border-radius: 14px;
   text-decoration: none;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 13px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  color: white;
 
   &--primary {
     background: rgba(59, 130, 246, 0.95);
