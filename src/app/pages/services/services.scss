@@ -179,8 +179,9 @@ $pageMax: 1500px;
   &__item {
     min-width: 0;
     display: flex;
-    gap: 12px;
-    padding: 18px;
+    padding-right: 17px;
+    padding-top: 18px;
+    padding-bottom: 18px;
     border-radius: 18px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);

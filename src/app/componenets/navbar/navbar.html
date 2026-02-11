@@ -39,10 +39,11 @@
   </div>
 </header>
 
-<!-- ✅ Overlay covers the whole screen. Click closes. -->
+<!-- ✅ spacer so page content starts below fixed navbar -->
+<div class="header-spacer"></div>
+
 <div class="overlay" *ngIf="isMenuOpen" (click)="closeMenu()"></div>
 
-<!-- ✅ Menu floats above overlay -->
 <div class="mobile" [class.mobile--open]="isMenuOpen">
   <nav class="mobile__nav" aria-label="Mobile navigation">
     <a

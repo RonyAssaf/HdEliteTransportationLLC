@@ -365,3 +365,7 @@ $pageMax: 1500px;
     padding-top: 36px;
   }
 }
+::ng-deep.hero.hero__card {
+  padding-top: 80px;
+  text-align: center;
+}
